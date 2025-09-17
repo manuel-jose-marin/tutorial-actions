@@ -1,6 +1,7 @@
 import unittest
 import datetime
-from tutorial_actions.persona import Persona
+import numpy
+from src.tutorial_actions.persona import Persona
 
 
 class PersonaTestCase(unittest.TestCase):
@@ -54,4 +55,3 @@ class PersonaTestCase(unittest.TestCase):
     def test_instancia_clase(self):
         self.assertIsInstance(self.persona1, Persona)
         self.assertNotIsInstance(self.grupo, Persona)
-
