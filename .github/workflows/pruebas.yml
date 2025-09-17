@@ -2,7 +2,7 @@ name: Pruebas unitarias
 
 on:
   push:
-    branches: [ master ]  # Cambia a [ main ] si tu rama principal es main
+    branches: [ master ]
 
 jobs:
   job1:
@@ -24,10 +24,9 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install coverage
 
-      # IMPORTANTE: ejecutamos UNA SOLA VEZ los tests, ya bajo coverage
       - name: Cálculo de cubrimiento (tests bajo coverage)
         env:
           PYTHONPATH: src
         run: |
-          coverage run --source=tutorial_actions -m unittest -v tests/test-persona.py
+          coverage run --source=src/tutorial_actions -m unittest discover -s tests -p "test-*.py" -v
           coverage report -m
