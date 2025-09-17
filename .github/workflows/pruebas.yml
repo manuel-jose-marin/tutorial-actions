@@ -24,9 +24,10 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install coverage
 
+      # IMPORTANTE: cambiar la ruta del source y el PYTHONPATH
       - name: Cálculo de cubrimiento (tests bajo coverage)
         env:
           PYTHONPATH: src
         run: |
-          coverage run --source=src/tutorial_actions -m unittest discover -s tests -p "test-*.py" -v
+          coverage run --source=src/tutorial_actions -m unittest -v tests/test-persona.py
           coverage report -m
