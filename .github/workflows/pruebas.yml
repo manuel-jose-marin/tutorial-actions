@@ -15,4 +15,4 @@ jobs:
           python-version: '3.11'
     - name: Correr pruebas
       id: correr-pruebas
-      run: python -m unittest -v tests/test_persona.py
+      run: python -m unittest -v tests/test-persona.py
