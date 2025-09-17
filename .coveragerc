@@ -1,0 +1,15 @@
+[run]
+source = src
+include = src/tutorial_actions/*
+omit = 
+    */tests/*
+    */test_*
+    */__pycache__/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError
+    
