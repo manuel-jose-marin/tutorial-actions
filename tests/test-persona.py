@@ -1,6 +1,5 @@
 import unittest
 import datetime
-import numpy
 from src.tutorial_actions.persona import Persona
 
 #COMENTARIOCOMENTARIO
