@@ -18,10 +18,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Correr pruebas
-      id: correr-pruebas
+      env:
+        PYTHONPATH: src
       run: python -m unittest -v tests/test-persona.py
+
     - name: Cálculo de cubrimiento
-      id: cubrimiento
+      env:
+        PYTHONPATH: src
       run: |
-          coverage run -m unittest tests/test-persona.py
-          coverage report -m
+        coverage run --source=src/tutorial_actions -m unittest tests/test-persona.py
+        coverage report -m
